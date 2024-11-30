@@ -28,7 +28,7 @@ export default function Home() {
       const data = await response.json();
       setTransactions(data);
     } catch (err) {
-      setError(err.message || "Something went wrong.");
+      setError((err as Error).message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
